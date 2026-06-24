@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="J. Cortina Golf Carts — Professional golf cart repair and services in Mission, TX" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <title>Contact | J. Cortina Golf Carts</title>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container navbar-inner">
+      <a href="./" class="navbar-logo">
+        <span class="logo-icon">&#9917;</span>
+        <span class="logo-text">J. Cortina Golf Carts</span>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="navbar-links" id="navLinks">
+        <li><a href="./">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1>Contact Us</h1>
+        <p>Get in touch or request a service appointment.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container contact-grid">
+        <div class="contact-info">
+          <h2>Get in Touch</h2>
+          <p>Call or email us directly for quick questions, or fill out the form to request a service appointment.</p>
+          <div class="contact-details">
+            <div class="contact-item">
+              <span class="contact-item-icon">&#128222;</span>
+              <div>
+                <h3>Phone</h3>
+                <a href="tel:+19569058790">(956) 905-8790</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="contact-item-icon">&#9993;&#65039;</span>
+              <div>
+                <h3>Email</h3>
+                <a href="mailto:cortinajaime@aol.com">cortinajaime@aol.com</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="contact-item-icon">&#128205;</span>
+              <div>
+                <h3>Location</h3>
+                <p>Mission, TX</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-wrapper">
+          <div id="formSuccess" class="form-success" style="display:none;">
+            <span class="form-success-icon">&#10003;</span>
+            <h3>Request Sent!</h3>
+            <p>Your service request has been submitted. We'll get back to you shortly.</p>
+          </div>
+          <form class="contact-form" id="contactForm">
+            <h2>Request Service</h2>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Name *</label>
+                <input type="text" id="name" name="name" required placeholder="Your full name" />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone *</label>
+                <input type="tel" id="phone" name="phone" required placeholder="(956) 555-0123" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="your@email.com" />
+            </div>
+            <div class="form-group">
+              <label for="cartMake">Cart Make &amp; Model</label>
+              <input type="text" id="cartMake" name="cartMake" placeholder="e.g. EZGO RXV" />
+            </div>
+            <div class="form-group">
+              <label for="issue">Issue Description *</label>
+              <textarea id="issue" name="issue" rows="4" required placeholder="Describe the problem with your golf cart..."></textarea>
+            </div>
+            <div class="form-group">
+              <label for="date">Preferred Service Date</label>
+              <input type="date" id="date" name="date" />
+            </div>
+            <button type="submit" class="btn btn-primary form-submit">Submit Request</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <h3>J. Cortina Golf Carts</h3>
+        <p>Professional golf cart repair and services in Mission, Texas. Quality work you can trust.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="./">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="tel:+19569058790">(956) 905-8790</a></li>
+          <li><a href="mailto:cortinajaime@aol.com">cortinajaime@aol.com</a></li>
+          <li>Mission, TX</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Hours</h3>
+        <ul>
+          <li>Mon&ndash;Fri: 8:00 AM &ndash; 6:00 PM</li>
+          <li>Sat: 9:00 AM &ndash; 3:00 PM</li>
+          <li>Sun: Closed</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2024 J. Cortina Golf Carts. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
