@@ -238,14 +238,14 @@ ul {
   min-height: 80vh;
   display: flex;
   align-items: center;
-  background: #1a1a1a url('../images/hero-bg.jpg') center / cover no-repeat;
+  background: linear-gradient(160deg, #2d5a27 0%, #4a8c3f 25%, #6aad5a 45%, #87c76e 65%, #a8d88c 80%, #6aad5a 100%);
   overflow: hidden;
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(0, 0, 0, 0.3);
 }
 
 .hero-content {
