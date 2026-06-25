@@ -19,7 +19,7 @@ const contactForm = document.getElementById('contactForm')
 const formSuccess = document.getElementById('formSuccess')
 
 if (contactForm) {
-  contactForm.addEventListener('submit', function (e) {
+  contactForm.addEventListener('submit', async function (e) {
     e.preventDefault()
 
     const name = document.getElementById('name').value.trim()
@@ -31,6 +31,24 @@ if (contactForm) {
 
     if (!name || !phone || !issue) return
 
+    const submitBtn = contactForm.querySelector('.form-submit')
+    submitBtn.disabled = true
+    submitBtn.textContent = 'Sending...'
+
+    try {
+      const res = await fetch('/api/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, phone, email, cartMake, issue, date })
+      })
+
+      if (!res.ok) throw new Error('Failed to submit')
+    } catch {
+      submitBtn.disabled = false
+      submitBtn.textContent = 'Submit Request'
+      return
+    }
+
     const subject = encodeURIComponent('Service Request - J. Cortina Golf Carts')
     const body = encodeURIComponent(
       'Name: ' + name + '\n' +
@@ -40,8 +58,7 @@ if (contactForm) {
       'Issue Description: ' + issue + '\n' +
       'Preferred Date: ' + date
     )
-
-    window.location.href = 'mailto:cortinajaime@aol.com?subject=' + subject + '&body=' + body
+    window.open('mailto:cortinajaime@aol.com?subject=' + subject + '&body=' + body)
 
     contactForm.style.display = 'none'
     if (formSuccess) formSuccess.style.display = 'block'
