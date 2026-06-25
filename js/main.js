@@ -35,20 +35,6 @@ if (contactForm) {
     submitBtn.disabled = true
     submitBtn.textContent = 'Sending...'
 
-    try {
-      const res = await fetch('/api/submit', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, phone, email, cartMake, issue, date })
-      })
-
-      if (!res.ok) throw new Error('Failed to submit')
-    } catch {
-      submitBtn.disabled = false
-      submitBtn.textContent = 'Submit Request'
-      return
-    }
-
     const subject = encodeURIComponent('Service Request - J. Cortina Golf Carts')
     const body = encodeURIComponent(
       'Name: ' + name + '\n' +
@@ -58,6 +44,13 @@ if (contactForm) {
       'Issue Description: ' + issue + '\n' +
       'Preferred Date: ' + date
     )
+
+    fetch('/api/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, phone, email, cartMake, issue, date })
+    }).catch(() => {})
+
     window.open('mailto:cortinajaime@aol.com?subject=' + subject + '&body=' + body)
 
     contactForm.style.display = 'none'
